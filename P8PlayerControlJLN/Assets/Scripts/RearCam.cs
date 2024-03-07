@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowPlayer : MonoBehaviour
+public class RearCam : MonoBehaviour
 {
     public GameObject player;
     public GameObject Driver;
     public GameObject MainCam;
     public GameObject Rear;
 
-    Vector3 offset = new Vector3(0, 5, -7);
+    Vector3 offset = new Vector3(0, 5, 7);
 
     // late updates happens after the update method
     void LateUpdate()
@@ -21,8 +21,8 @@ public class FollowPlayer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            MainCam.SetActive(false);
-            Driver.SetActive(true);
+            MainCam.SetActive(true);
+            Driver.SetActive(false);
             Rear.SetActive(false);
         }
     }
